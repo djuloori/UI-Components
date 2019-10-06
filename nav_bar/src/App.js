@@ -2,37 +2,48 @@ import React, { Component } from 'react';
 import './App.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faUser, faBell } from '@fortawesome/free-solid-svg-icons';
+import {faSearch, faEnvelope, faUser, faBell} from '@fortawesome/free-solid-svg-icons';
 
-library.add(faEnvelope, faUser, faBell);
+library.add(faSearch, faEnvelope, faUser, faBell);
 
 class App extends Component {
   render() {
     return (
       <div className="navigation-container">
-        <div className="navigation-list">
-          <ul>
+        <div className="navigation-list-items">
+          <ul className="list-items">
             <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Work</a></li>
-            <li><a href="#">Contact</a></li>
-            <li>
-              <button className="dropdown-btn">Courses</button>
-            </li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Organizations</a></li>
+            <li><a href="#">Activity</a></li>   
           </ul>
-        </div>  
-        <div className="grow"></div>
-        <div className="nav-icons">          
-          <button className="nav-icon-buttons">
-            <FontAwesomeIcon icon="envelope" color="white"/>
-          </button>
-          <button className="nav-icon-buttons">
-            <FontAwesomeIcon icon="bell" color="white"/>
-          </button>
-          <button className="nav-icon-buttons">
-            <FontAwesomeIcon icon="user" color="white"/>
-          </button>
+        </div>
+        <div className="navigation-search-bar">
+          <form action="#">
+            <input type="text" className="searchBox" placeholder=" Search "/>
+            <button class="searchButton">
+              <FontAwesomeIcon icon="search" color="black" />
+            </button> 
+          </form>
+        </div>
+        <div className="navigation-icons">
+            <ul className="list-dropdwn-icons">
+              <li>
+                <button>
+                  <FontAwesomeIcon icon="envelope" color="white"/>
+                </button>                
+              </li>
+              <li>
+                <button>
+                  <FontAwesomeIcon icon="bell" color="white"/>
+                </button>                                
+              </li>
+              <li>
+                <button>
+                  <FontAwesomeIcon icon="user" color="white"/>
+                </button>
+              </li>
+          </ul>
         </div>
       </div>
     );
