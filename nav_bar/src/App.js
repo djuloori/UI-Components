@@ -20,9 +20,9 @@ class App extends Component {
         </div>
         <div className="navigation-search-bar">
           <form action="#">
-            <input type="text" className="searchBox" placeholder=" Search "/>
-            <button class="searchButton">
-              <FontAwesomeIcon icon="search" color="black" />
+            <input type="text" className="search-box" placeholder=" Search "/>
+            <button class="search-btn">
+              <FontAwesomeIcon icon="search" color="#495363" />
             </button> 
           </form>
         </div>
@@ -30,17 +30,17 @@ class App extends Component {
             <ul className="list-dropdwn-icons">
               <li>
                 <button>
-                  <FontAwesomeIcon icon="envelope" color="white"/>
+                  <FontAwesomeIcon icon="envelope" color="#495363"/>
                 </button>                
               </li>
               <li>
                 <button>
-                  <FontAwesomeIcon icon="bell" color="white"/>
+                  <FontAwesomeIcon icon="bell" color="#495363"/>
                 </button>                                
               </li>
               <li>
                 <button>
-                  <FontAwesomeIcon icon="user" color="white"/>
+                  <FontAwesomeIcon icon="user" color="#495363"/>
                 </button>
               </li>
           </ul>
