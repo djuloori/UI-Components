@@ -3,6 +3,7 @@ import './App.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch, faEnvelope, faUser, faBell} from '@fortawesome/free-solid-svg-icons';
+import logo from "../assets/logo.png";
 
 library.add(faSearch, faEnvelope, faUser, faBell);
 
@@ -10,6 +11,9 @@ class App extends Component {
   render() {
     return (
       <div className="navigation-container">
+        <div className="logo">
+          <a href="#"><img src={logo} alt=""></img></a>
+        </div>
         <div className="navigation-list-items">
           <ul className="list-items">
             <li><a href="#">Home</a></li>
@@ -21,8 +25,8 @@ class App extends Component {
         <div className="navigation-search-bar">
           <form action="#">
             <input type="text" className="search-box" placeholder=" Search "/>
-            <button class="search-btn">
-              <FontAwesomeIcon icon="search" color="#495363" />
+            <button className="search-btn">
+              <FontAwesomeIcon icon="search" color="black" />
             </button> 
           </form>
         </div>
@@ -30,17 +34,17 @@ class App extends Component {
             <ul className="list-dropdwn-icons">
               <li>
                 <button>
-                  <FontAwesomeIcon icon="envelope" color="#495363"/>
+                  <FontAwesomeIcon icon="envelope" color="white"/>
                 </button>                
               </li>
               <li>
                 <button>
-                  <FontAwesomeIcon icon="bell" color="#495363"/>
+                  <FontAwesomeIcon icon="bell" color="white"/>
                 </button>                                
               </li>
               <li>
                 <button>
-                  <FontAwesomeIcon icon="user" color="#495363"/>
+                  <FontAwesomeIcon icon="user" color="white"/>
                 </button>
               </li>
           </ul>
