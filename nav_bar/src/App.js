@@ -4,6 +4,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch, faEnvelope, faUser, faBell} from '@fortawesome/free-solid-svg-icons';
 import logo from "../assets/logo.png";
+import user from "../assets/useravatar.png";
 
 library.add(faSearch, faEnvelope, faUser, faBell);
 
@@ -33,20 +34,17 @@ class App extends Component {
         <div className="navigation-icons">
             <ul className="list-dropdwn-icons">
               <li>
-                <button>
-                  <FontAwesomeIcon icon="envelope" color="white"/>
-                </button>                
-              </li>
-              <li>
-                <button>
-                  <FontAwesomeIcon icon="bell" color="white"/>
-                </button>                                
-              </li>
-              <li>
-                <button>
-                  <FontAwesomeIcon icon="user" color="white"/>
+                <button className="user-avatar">
+                   <img src={user} alt=""></img>
+                   <span>Kushal Dhruva</span>
+                   <span className="caret"></span>  
                 </button>
               </li>
+              <li>
+                <button className="user-notification">
+                  <FontAwesomeIcon icon="bell" color="white"/>
+                </button>                                
+              </li>              
           </ul>
         </div>
       </div>

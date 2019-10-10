@@ -12,6 +12,12 @@ body{
     max-height: 40px;
 }
 
+.logo img {
+    width: 200px;
+    margin-top: 6px;
+    border-right: 1px solid #a7b9bc;
+}
+
 .navigation-list-items{
     order: 1;
     flex: 1;
@@ -74,12 +80,11 @@ body{
     padding-left: 4px;
 }
 
-.navigation-icons .list-dropdwn-icons{
+.list-dropdwn-icons{
     display: flex;
     list-style-type: none;
-    margin: 2px 6px;
-    padding-left: 2px;
-    
+    margin: 0px 8px;
+    padding-left: 2px;    
 }
 
 .list-dropdwn-icons button{
@@ -87,14 +92,42 @@ body{
     border: 0px;
     cursor: pointer;
     outline: none;
-    margin: 8px;
-    font-size: 15px;
+    font-family: inherit;
+    margin-top: 6px;
 }
 
-img {
-    width: 200px;
-    margin-top: 6px;
-    border-right: 1px solid #a7b9bc;
+.caret{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    margin-left: 3px;
+    border-top: 4px solid white;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+
+.user-avatar{
+    color: white;
+    font-size: 14px;
+}
+
+.user-avatar span {
+    vertical-align: middle;
+}
+
+.user-avatar img{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    padding-right: 4px;
+    border-radius: 50%
+}
+
+.user-notification{
+    font-size: 20px;
+    margin-left: 4px;
 }
 
 
