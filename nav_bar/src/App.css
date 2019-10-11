@@ -12,25 +12,29 @@ body{
     max-height: 40px;
 }
 
-.logo img {
+.brand{
+    order: 1;
+}
+
+.app-image {
     width: 200px;
     margin-top: 6px;
     border-right: 1px solid #a7b9bc;
 }
 
-.navigation-list-items{
-    order: 1;
+.navbar-subnav{
+    order: 2;
     flex: 1;
 }
 
-.list-items{
+.nav-menu-items{
     display: flex;
     list-style-type: none;
     padding-left: 2px;
     margin-top: 8px;
 }
 
-.list-items a{ 
+.nav-menu-links{ 
    text-decoration: none;
    color: white;
    margin: 4px 2px;
@@ -40,12 +44,12 @@ body{
    font-weight: 600;
 }
 
-.list-items a:hover{
+.nav-menu-links:hover{
     background-color: #111; 
 }
 
 .navigation-search-bar{
-    order: 2;
+    order: 3;
     position: relative;
     padding-right: 10px;
 }
@@ -75,7 +79,7 @@ body{
 }
 
 .navigation-icons {
-    order: 3;
+    order: 4;
     padding-right: 5px;
     padding-left: 4px;
 }
@@ -87,7 +91,7 @@ body{
     padding-left: 2px;    
 }
 
-.list-dropdwn-icons button{
+.btn-icons{
     background-color: black;
     border: 0px;
     cursor: pointer;
@@ -112,12 +116,11 @@ body{
     font-size: 14px;
 }
 
-.user-avatar span {
+.user-name {
     vertical-align: middle;
 }
 
-.user-avatar img{
-    display: inline-block;
+.badge{
     width: 25px;
     height: 25px;
     vertical-align: middle;
@@ -130,14 +133,13 @@ body{
     margin-left: 4px;
 }
 
-
 @media screen and (max-width: 990px){
     .navigation-search-bar{
      display: none;
     }
 }
 
-@media screen and (max-width: 550px){
+@media screen and (max-width: 750px){
     .navigation-icons{
      display: none;
     }

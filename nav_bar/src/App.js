@@ -2,25 +2,26 @@ import React, { Component } from 'react';
 import './App.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faSearch, faEnvelope, faUser, faBell} from '@fortawesome/free-solid-svg-icons';
+import {faSearch, faBell} from '@fortawesome/free-solid-svg-icons';
 import logo from "../assets/logo.png";
 import user from "../assets/useravatar.png";
 
-library.add(faSearch, faEnvelope, faUser, faBell);
+library.add(faSearch, faBell);
 
 class App extends Component {
+
   render() {
+    const navItems =[{"name":"Home"},{"name":"Courses"},{"name":"Organizations"},{"name":"Activity"}];
+    const navListItems = navItems.map((navItem) => <li><a className="nav-menu-links" href="#">{navItem.name}</a></li>)
+
     return (
       <div className="navigation-container">
-        <div className="logo">
-          <a href="#"><img src={logo} alt=""></img></a>
+        <div className="brand">
+          <a href="#"><img className="app-image" src={logo} alt=""></img></a>
         </div>
-        <div className="navigation-list-items">
-          <ul className="list-items">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Courses</a></li>
-            <li><a href="#">Organizations</a></li>
-            <li><a href="#">Activity</a></li>   
+        <div className="navbar-subnav">
+          <ul className="nav-menu-items">
+            {navListItems}
           </ul>
         </div>
         <div className="navigation-search-bar">
@@ -34,14 +35,14 @@ class App extends Component {
         <div className="navigation-icons">
             <ul className="list-dropdwn-icons">
               <li>
-                <button className="user-avatar">
-                   <img src={user} alt=""></img>
-                   <span>Kushal Dhruva</span>
+                <button className="btn-icons user-avatar">
+                   <img className="badge" src={user} alt=""></img>
+                   <span className="user-name">Kushal Dhruva</span>
                    <span className="caret"></span>  
                 </button>
               </li>
               <li>
-                <button className="user-notification">
+                <button className="btn-icons user-notification">
                   <FontAwesomeIcon icon="bell" color="white"/>
                 </button>                                
               </li>              
