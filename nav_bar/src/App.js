@@ -12,10 +12,9 @@ library.add(faSearch, faBell);
 class App extends Component {
 
   render() {
-    const navItems =[{"name":"Home"},{"name":"Courses","list":["Course 12234235","Course 2", "Course 3"]},{"name":"Organizations", "list":["Organization 214123","Organization 2"]},{"name":"Activity"}];
-    const navListItems = navItems.map((navItem) => {if ('list' in navItem)
-                                                        return <Dropdown title= {navItem.name} list={navItem.list} />
-                                                    return <li><a className="nav-menu-links" href="#">{navItem.name}</a></li>});
+    const navItems =[{"name":"Home", "list": []},{"name":"Courses","list":["CS-2150 Algorithms", "CS-250 Operating Systems", "CS-250 Operating Systems"]},{"name":"Organizations", "list":["Assignment 1"]},{"name":"Activity", "list":[]}];
+    const navListItems = navItems.map((navItem) => <Dropdown title= {navItem.name} list={navItem.list} />)
+
 
     return (
       <div className="navigation-container">
@@ -39,12 +38,10 @@ class App extends Component {
             <ul className="list-dropdwn-icons">
               <li>
                 <img className="badge" src={user} alt=""></img>
-                <Dropdown title = "AbhiramChepur" list = {["Profile", "Settings","Logout"]} />
+                <Dropdown title = "AbhiramChepur" list = {["Profile", "Settings","Profile","Profile", "Settings","Logout"]} />
               </li>
-              <li>
-                <button className="btn-icons user-notification">
-                  <FontAwesomeIcon icon="bell" color="white"/>
-                </button>
+              <li className="notifications">
+                  <Dropdown icon = "bell" list = {["Notification 1", "Notification 2","Not"]} />
               </li>
           </ul>
         </div>

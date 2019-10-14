@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './App.css';
 
 const styles = theme => ({})
@@ -7,7 +8,8 @@ const styles = theme => ({})
 export default class Dropdown extends Component {
       static defaultProps = {
         title:null,
-        list: []
+        list: [],
+        icon:null
       };
 
       constructor(props) {
@@ -19,27 +21,6 @@ export default class Dropdown extends Component {
         };
         this.showDropdown = this.showDropdown.bind(this);
       }
-
-      componentWillMount() {
-        const { label } = this.props.list[0];
-        let firstItem = null;
-        if (typeof label != 'undefined') {
-          this.checkType(false);
-          firstItem = label;
-        } else {
-          this.checkType(true);
-          firstItem = this.props.list[0];
-        }
-        this.setState({
-            labelItem: firstItem
-        });
-      }
-
-      checkType = (value) => {
-        this.setState({
-            typeDropdown: value
-        });
-      };
 
       showDropdown = () => {
         this.setState({ isOpen: true });
@@ -60,25 +41,43 @@ export default class Dropdown extends Component {
       };
 
       renderDataDropDown = (item, index) => {
-        const {value, label} = this.state.typeDropdown ? {value: index, label: item} : item;
         return (
           <li
             key={index}
-            value={value}
-            onClick={() => this.chooseItem(label)}
+            value={item}
           >
-            <a>{label}</a>
+            <a>{item}</a>
           </li>
         )
       };
 
       render () {
         const { list } = this.props;
+        let icon;
+        if (this.props.icon=="bell"){
+        icon = <FontAwesomeIcon className = "user-notification" icon="bell" color="white"/>
+      } else{
+        icon = <span className="caret"></span>
+      }
+      if (list.length===0){
+        return(
+          <div className={`dropdown ${this.state.isOpen ? 'open' : ''}`}>
+            <a className="dropdown-toggle" type="button" onClick={this.showDropdown}>
+              {this.props.title}
+              {icon}
+            </a>
+            <ul className="dropdown-menu-none">
+             <li><a>No items to display</a></li>
+            </ul>
+        </div>
+
+        )
+      }else{
         return (
           <div className={`dropdown ${this.state.isOpen ? 'open' : ''}`}>
             <a className="dropdown-toggle" type="button" onClick={this.showDropdown}>
               {this.props.title}
-              <span className="caret"></span>
+              {icon}
             </a>
             <ul className="dropdown-menu">
               {list.map(this.renderDataDropDown)}
@@ -86,4 +85,5 @@ export default class Dropdown extends Component {
         </div>
         )
       }
-}
+    }
+    }
