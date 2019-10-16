@@ -12,8 +12,8 @@ library.add(faSearch, faBell);
 class App extends Component {
 
   render() {
-    const navItems =[{"name":"Home", "list": []},{"name":"Courses","list":["CS-2150 Algorithms", "CS-250 Operating Systems", "CS-250 Operating Systems"]},{"name":"Organizations", "list":["Assignment 1"]},{"name":"Activity", "list":[]}];
-    const navListItems = navItems.map((navItem) => <Dropdown title= {navItem.name} list={navItem.list} />)
+    const navItems =[{"name":"Courses","list":["CS-2150 Algorithms", "CS-250 Operating Systems", "CS-250 Operating Systems","CS-2150 Algorithms", "CS-250 Operating Systems", "CS-250 Operating Systems","CS-2150 Algorithms", "CS-250 Operating Systems", "CS-250 Operating Systems","CS-2150 Algorithms", "CS-250 Operating Systems", "CS-250 Operating Systems","CS-2150 Algorithms", "CS-250 Operating Systems", "CS-250 Operating Systems","CS-2150 Algorithms", "CS-250 Operating Systems", "CS-250 Operating Systems"], "list2":["All Courses", "Frequently Visited"]},{"name":"Organizations", "list":[], "list2":["All Organizations"]},{"name":"More", "list":["Course Schedule","Events","Exam Schedule"], "list2":[]}];
+    const navListItems = navItems.map((navItem) => <li><Dropdown title= {navItem.name} list={navItem.list} list2={navItem.list2}/></li>)
 
 
     return (
@@ -38,7 +38,7 @@ class App extends Component {
             <ul className="list-dropdwn-icons">
               <li>
                 <img className="badge" src={user} alt=""></img>
-                <Dropdown title = "AbhiramChepur" list = {["Profile", "Settings","Profile","Profile", "Settings","Logout"]} />
+                <Dropdown title = "Abhiram Chepur" list = {["Profile", "Settings","Profile","Profile", "Settings","Logout"]} />
               </li>
               <li className="notifications">
                   <Dropdown icon = "bell" list = {["Notification 1", "Notification 2","Not"]} />

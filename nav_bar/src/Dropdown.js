@@ -9,7 +9,8 @@ export default class Dropdown extends Component {
       static defaultProps = {
         title:null,
         list: [],
-        icon:null
+        icon:null,
+        list2:[]
       };
 
       constructor(props) {
@@ -53,26 +54,14 @@ export default class Dropdown extends Component {
 
       render () {
         const { list } = this.props;
+        const { list2 } = this.props;
         let icon;
         if (this.props.icon=="bell"){
         icon = <FontAwesomeIcon className = "user-notification" icon="bell" color="white"/>
       } else{
         icon = <span className="caret"></span>
       }
-      if (list.length===0){
-        return(
-          <div className={`dropdown ${this.state.isOpen ? 'open' : ''}`}>
-            <a className="dropdown-toggle" type="button" onClick={this.showDropdown}>
-              {this.props.title}
-              {icon}
-            </a>
-            <ul className="dropdown-menu-none">
-             <li><a>No items to display</a></li>
-            </ul>
-        </div>
-
-        )
-      }else{
+       if (list2.length===0){
         return (
           <div className={`dropdown ${this.state.isOpen ? 'open' : ''}`}>
             <a className="dropdown-toggle" type="button" onClick={this.showDropdown}>
@@ -83,7 +72,28 @@ export default class Dropdown extends Component {
               {list.map(this.renderDataDropDown)}
             </ul>
         </div>
+      )}
+        else{
+          return (
+            <div className={`dropdown-multi ${this.state.isOpen ? 'open' : ''}`}>
+              <a className="dropdown-toggle" type="button" onClick={this.showDropdown}>
+                {this.props.title}
+                {icon}
+              </a>
+              <ul className="dropdown-menu">
+              <ul className="first">
+              {list2.map(this.renderDataDropDown)}
+      </ul>
+      {list.length>0 ?(
+      <ul className="second">
+            {list.map(this.renderDataDropDown)}
+       </ul>):(
+         <ul className="second-empty">
+         <li><a>You have not signed up to any {this.props.title}</a></li>
+        </ul>)}
+       </ul>
+          </div>
         )
       }
-    }
+      }
     }
