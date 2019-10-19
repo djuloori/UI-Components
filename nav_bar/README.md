@@ -1,3 +1,15 @@
+## Storybook
+
+Run the following command to test the components on storybook locally:
+```
+npm run storybook
+```
+
+To deploy the storybook to github, run the following command:
+```
+npm run deploy-storybook
+```
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
