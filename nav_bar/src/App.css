@@ -1,16 +1,15 @@
 body{
     margin: 0px;
     padding: 0px;
-    font-family:"Segoe UI", "Noto Sans", "Ubuntu",  "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";   
+    font-family:"Segoe UI", "Noto Sans", "Ubuntu",  "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .navigation-container{
     display: flex;
     background-color:black;
     width: 100%;
-    position: fixed;
+    position: relative;
     max-height: 40px;
-    z-index: 800;
 }
 
 .brand{
@@ -32,21 +31,224 @@ body{
     display: flex;
     list-style-type: none;
     padding-left: 2px;
-    margin-top: 8px;
-}
-
-.nav-menu-links{ 
-   text-decoration: none;
-   color: white;
-   margin: 4px 2px;
-   padding: 6px 8px;
-   font-size: 12px;
-   border-radius: 4px;
-   font-weight: 600;
+    margin-top: 3px;
 }
 
 .nav-menu-links:hover{
-    background-color: #111; 
+    background-color: #111;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown.open > .dropdown-menu {
+    display: block;
+}
+
+.dropdown.open > .dropdown-menu-none {
+    display: block;
+}
+
+.dropdown .dropdown-toggle {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    margin: 3px 0px;
+    padding: 6px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.dropdown .dropdown-toggle:hover{
+    background-color: #111;
+}
+
+.dropdown .dropdown-toggle .caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+
+.dropdown .dropdown-menu {
+    left:0;
+    position: absolute;
+    top: 100%;
+    min-width: 130px;
+    z-index: 1000;
+    display: none;
+    float: left;
+    padding: 0px 0;
+    padding-left: 0px;
+    margin: 9px 0 0;
+    padding-bottom: 0px;
+    font-size: 13px;
+    text-align: left;
+    list-style: none;
+    background-color: white;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.dropdown .dropdown-menu-none {
+    left:0;
+    position: absolute;
+    top: 100;
+    min-width: 120px;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    padding: 100px 0;
+    padding-left: 10px;
+    margin: 9px 0 0;
+    font-size: 12px;
+    font-style: italic;
+    text-align: left;
+    list-style: none;
+    background-color: white;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+
+.dropdown .dropdown-menu li {
+    cursor: pointer;
+}
+
+.dropdown .dropdown-menu li :hover {
+    background:#dedede;
+}
+
+.dropdown .dropdown-menu li > a {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    display: block;
+    padding: 5px 20px;
+    padding-left: 10px;
+    clear: both;
+    font-weight: 350;
+    line-height: 1.42857143;
+    color: black;
+    white-space: nowrap;
+    text-decoration: none;
+
+}
+
+.dropdown-multi{
+    position: relative;
+}
+
+.dropdown-multi .dropdown-toggle {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    margin: 3px 0px;
+    padding: 6px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.dropdown-multi .dropdown-toggle:hover{
+    background-color: #111;
+}
+
+.dropdown-multi.open > .dropdown-menu {
+    display: block;
+}
+
+.dropdown-multi .dropdown-menu {
+    left:0;
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    float: left;
+    padding: 0px 0;
+    padding-left: 0px;
+    margin: 9px 0 0;
+    padding-bottom: 0px;
+    font-size: 13px;
+    text-align: left;
+    list-style: none;
+    background-color: white;
+}
+
+.dropdown-multi ul {
+    top: 100%;
+    position:absolute;
+    background-color:white;
+    width: 400px;
+    padding-left: 5px;
+    background-clip: padding-box;
+
+}
+
+.dropdown-multi ul ul{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+
+}
+
+.dropdown-multi li a{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    display:block;
+    padding-right:0px;
+    padding-left:5px;
+    line-height:30px;
+    color:black;
+    font-size:14px;
+    font-weight: 350;
+}
+
+.dropdown-multi .first a:hover,.second a:hover {
+    cursor: pointer;
+    background-color: #dedede;
+}
+
+.second{
+    left:150px;
+    height:250px;
+    border: 1px solid #ccc;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    overflow-y: auto;
+}
+
+.second-empty{
+    left:150px;
+    height:250px;
+    border: 1px solid #ccc;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    overflow-y: auto;
+}
+  
+.second-empty li a{
+    font-style: italic;
+    padding:100px 0px;
+    padding-left: 50px;
+    font-weight: 100;
+}
+
+.first{
+    height:250px;
+    border: 1px solid #ccc;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
 }
 
 .navigation-search-bar{
@@ -60,10 +262,10 @@ body{
     margin: 5px;
     border: none;
     border-radius: 4px;
-    width: 100%; 
+    width: 100%;
     font-size: 15px;
     font-family: inherit;
-    outline: 0;  
+    outline: 0;
 }
 
 .search-btn {
@@ -89,16 +291,57 @@ body{
     display: flex;
     list-style-type: none;
     margin: 0px 8px;
-    padding-left: 2px;    
+    padding-left: 2px;
 }
 
-.btn-icons{
-    background-color: black;
-    border: 0px;
+.list-dropdwn-icons .dropdown a{
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.list-dropdwn-icons .dropdown.open > .dropdown-menu {
+  display: block;
+}
+
+.list-dropdwn-icons .dropdown{
+    float:right;
+    color: white;
     cursor: pointer;
-    outline: none;
-    font-family: inherit;
-    margin-top: 6px;
+    text-decoration: none;
+    color: white;
+    padding: 0px 0px;
+    font-size: 25px;
+    border-radius: 4px;
+}
+
+.list-dropdwn-icons .dropdown .dropdown-menu{
+    left: auto;
+    right:0;
+    min-width: 150px;
+    display: none;
+    font-size: 14px;
+    text-align: left;
+    color: black;
+    cursor: pointer;
+    float: left;
+    text-decoration: none;
+    margin: 9px 0px;
+    padding: 0px 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    border-radius: 4px;
+}
+
+.list-dropdwn-icons .dropdown .dropdown-menu li a{
+   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    display: block;
+    font-size: 14px;
+    text-align: left;
+    line-height: 1.42857143;
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+
 }
 
 .caret{
@@ -125,13 +368,21 @@ body{
     width: 25px;
     height: 25px;
     vertical-align: middle;
+    margin: 5px 0px;
     padding-right: 4px;
-    border-radius: 50%
+    border-radius: 50%;
 }
 
 .user-notification{
     font-size: 20px;
-    margin-left: 4px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.notifications .dropdown .dropdown-menu{
+  min-width: 130px;
+  margin-top: 6px;
+  margin-right: 0px;
 }
 
 @media screen and (max-width: 990px){
@@ -144,4 +395,9 @@ body{
     .navigation-icons{
      display: none;
     }
+@media screen and (max-width: 550px){
+    .nav-menu-items{
+     display: none;
+    }
+}
 }

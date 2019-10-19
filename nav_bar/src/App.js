@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Topbar from './TopBar';
 import SideBar from './SideBar';
 
-
 class App extends Component {
 
   render() {
