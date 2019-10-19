@@ -10,6 +10,7 @@ body{
     width: 100%;
     position: fixed;
     max-height: 40px;
+    z-index: 800;
 }
 
 .brand{
