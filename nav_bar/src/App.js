@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Dropdown from "./Dropdown";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch, faBell} from '@fortawesome/free-solid-svg-icons';
@@ -11,8 +12,9 @@ library.add(faSearch, faBell);
 class App extends Component {
 
   render() {
-    const navItems =[{"name":"Home"},{"name":"Courses"},{"name":"Organizations"},{"name":"Activity"}];
-    const navListItems = navItems.map((navItem) => <li><a className="nav-menu-links" href="#">{navItem.name}</a></li>)
+    const navItems =[{"name":"Courses","list":["CS-2150 Algorithms", "CS-250 Operating Systems", "CS-250 Operating Systems","CS-2150 Algorithms", "CS-250 Operating Systems", "CS-250 Operating Systems","CS-2150 Algorithms", "CS-250 Operating Systems", "CS-250 Operating Systems","CS-2150 Algorithms", "CS-250 Operating Systems", "CS-250 Operating Systems","CS-2150 Algorithms", "CS-250 Operating Systems", "CS-250 Operating Systems","CS-2150 Algorithms", "CS-250 Operating Systems", "CS-250 Operating Systems"], "list2":["All Courses", "Frequently Visited"]},{"name":"Organizations", "list":[], "list2":["All Organizations"]},{"name":"More", "list":["Course Schedule","Events","Exam Schedule"], "list2":[]}];
+    const navListItems = navItems.map((navItem) => <li><Dropdown title= {navItem.name} list={navItem.list} list2={navItem.list2}/></li>)
+
 
     return (
       <div className="navigation-container">
@@ -29,23 +31,18 @@ class App extends Component {
             <input type="text" className="search-box" placeholder=" Search "/>
             <button className="search-btn">
               <FontAwesomeIcon icon="search" color="black" />
-            </button> 
+            </button>
           </form>
         </div>
         <div className="navigation-icons">
             <ul className="list-dropdwn-icons">
               <li>
-                <button className="btn-icons user-avatar">
-                   <img className="badge" src={user} alt=""></img>
-                   <span className="user-name">Kushal Dhruva</span>
-                   <span className="caret"></span>  
-                </button>
+                <img className="badge" src={user} alt=""></img>
+                <Dropdown title = "Abhiram Chepur" list = {["Profile", "Settings","Profile","Profile", "Settings","Logout"]} />
               </li>
-              <li>
-                <button className="btn-icons user-notification">
-                  <FontAwesomeIcon icon="bell" color="white"/>
-                </button>                                
-              </li>              
+              <li className="notifications">
+                  <Dropdown icon = "bell" list = {["Notification 1", "Notification 2","Not"]} />
+              </li>
           </ul>
         </div>
       </div>
