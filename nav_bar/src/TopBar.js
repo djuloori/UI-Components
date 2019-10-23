@@ -5,7 +5,6 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSearch, faBell} from '@fortawesome/free-solid-svg-icons';
 import logo from "../assets/logo.png";
-import user from "../assets/useravatar.png";
 
 library.add(faSearch, faBell);
 
@@ -37,11 +36,10 @@ class App extends Component {
         <div className="navigation-icons">
             <ul className="list-dropdwn-icons">
               <li>
-                <img className="badge" src={user} alt=""></img>
-                <Dropdown title="Abhiram Chepur" list={["Profile", "Settings","Profile","Profile", "Settings","Logout"]} />
+                <Dropdown title="Abhiram Chepur" useBadge={true} list={["Profile", "Settings","Profile","Profile", "Settings","Logout"]} />
               </li>
               <li className="notifications">
-                  <Dropdown icon="bell" list={["Notification 1", "Notification 2","Not"]} />
+                  <Dropdown useIcon={true} list={["Notification 1", "Notification 2","Not"]} />
               </li>
           </ul>
         </div>

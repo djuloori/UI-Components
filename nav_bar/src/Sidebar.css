@@ -1,27 +1,27 @@
 .side-nav-container{
   position: fixed;
   height: 100vh;
-  width: 200px;
-  box-shadow: inset -1px 0 0 #e5e5e5;
-  background-color: #F1F1F1; 
+  width: 12.5rem;
+  box-shadow: inset -0.0625rem 0 0 #e5e5e5;
+  background-color: #F1F1F1;
 }
 
 .subnav-menu-links{
   display: flex;
   color: #000;
-  padding: 10px 16px 10px 16px;
+  padding: 0.625rem 1rem 0.625rem 1rem;
   text-decoration: none;
-  flex-direction: column;    
+  flex-direction: column;
 }
 
 .subnav-menu-links:hover{
-  background-color: #dedede; 
+  background-color: #dedede;
 }
 
-.menu-items{ 
+.menu-items{
   list-style-type: none;
   margin: 0;
-  padding: 0; 
-  border: 1px; 
+  padding: 0;
+  border: 0.0625rem;
   overflow: auto;
 }
