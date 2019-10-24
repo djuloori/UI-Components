@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import user from '../assets/useravatar.png';
+import PropTypes from 'prop-types';
 import './App.css';
 
 var classNames = require('classnames');
 
 export default class Dropdown extends Component {
-	
+
+	static propTypes = {
+		title: PropTypes.string.isRequired,
+		list:PropTypes.array,
+		useIcon:PropTypes.bool,
+		useBadge:PropTypes.bool,
+		list2:PropTypes.array
+	};
+
 	static defaultProps={
 		title:null,
 		list: [],
