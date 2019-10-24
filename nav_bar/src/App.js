@@ -4,14 +4,14 @@ import SideBar from './SideBar';
 
 class App extends Component {
 
-  render() {
-    return (
-      <div>
-         <Topbar/>
-         <SideBar/>
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div>
+				<Topbar/>
+				<SideBar/>
+			</div>
+		);
+	}
 }
 
 export default App;
