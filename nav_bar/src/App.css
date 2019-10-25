@@ -46,7 +46,7 @@ body{
     display: block;
 }
 
-.dropdown .dropdown-toggle {
+.dropdown-toggle {
     display: inline-block;
     cursor: pointer;
     text-decoration: none;
@@ -58,7 +58,7 @@ body{
     font-weight: 600;
 }
 
-.dropdown .dropdown-menu {
+.dropdown-menu {
     left:0;
     position: absolute;
     top: 100%;
@@ -78,7 +78,7 @@ body{
     border-radius: 0.25rem;
 }
 
-.dropdown .dropdown-menu-none {
+.dropdown-menu-none {
     left:0;
     position: absolute;
     top: 100;
@@ -101,15 +101,15 @@ body{
     box-shadow: 0 0.375rem 0.75rem rgba(0, 0, 0, 0.175);
 }
 
-.dropdown .dropdown-menu .dropdown-list {
+.dropdown-list {
     cursor: pointer;
 }
 
-.dropdown .dropdown-menu .dropdown-list :hover {
+.dropdown-list :hover {
     background:#dedede;
 }
 
-.dropdown .dropdown-menu .dropdown-list > .dropdown-item {
+.dropdown-list > .dropdown-item {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     display: block;
     padding: 0.3125rem 1.25rem 0.35rem 0.625rem;
@@ -126,27 +126,16 @@ body{
     position: relative;
  }
 
- .dropdownMulti .dropdown-toggle {
-   display: inline-block;
-   cursor: pointer;
-   text-decoration: none;
-   color: white;
-   margin: 0.1875rem 0px;
-   padding: 0.375rem 8px;
-   font-size: 0.75rem;
-   border-radius: 0.25rem;
-   font-weight: 600;
- }
 
- .dropdownMulti .dropdown-toggle:hover{
+.dropdown-toggle:hover{
        background-color: #111;
  }
- 
- .dropdownMulti.open > .dropdown-menu {
+
+ .dropdownMulti.open > .dropdown-menu-multi {
    display: block;
  }
 
- .dropdownMulti .dropdown-menu {
+ .dropdown-menu-multi {
    left:0;
    display: none;
    position: absolute;
@@ -160,7 +149,7 @@ body{
    background-color: white;
  }
 
- .dropdownMulti .dropdown-menu .first,.second,.second-empty{
+ .first,.second,.second-empty{
      top: 100%;
      position:absolute;
      background-color:white;
@@ -172,7 +161,7 @@ body{
 
  }
 
- .dropdownMulti .dropdown-list .dropdown-item{
+ .dropdown-item{
      display:block;
      padding:0 0 0 0.3125rem;
      line-height:1.875rem;
@@ -181,7 +170,7 @@ body{
      font-weight: 350;
  }
 
- .dropdownMulti .first .dropdown-item:hover,.second .dropdown-item:hover {
+ .dropdown-item:hover {
      cursor: pointer;
      background-color:#dedede;
  }
@@ -196,7 +185,7 @@ body{
 
  }
 
- .second-empty .list-item{
+.list-item{
    font-style: italic;
    padding:6.25rem 0 0 3.125rem;
    font-weight: 300;
@@ -252,7 +241,7 @@ body{
     padding: 0 0 0 0.125rem;
 }
 
-.list-dropdwn-icons .dropdown .title{
+.list-dropdwn-icons .title{
   font-family: inherit;
   vertical-align: middle;
   font-weight: 400;
@@ -261,16 +250,6 @@ body{
 
 .list-dropdwn-icons .dropdown.open > .dropdown-menu {
   display: block;
-}
-
-.list-dropdwn-icons .dropdown{
-    float:right;
-    color: white;
-    cursor: pointer;
-    text-decoration: none;
-    padding: 0rem 0rem;
-    font-size: 1.563rem;
-    border-radius: 0.25rem;
 }
 
 .list-dropdwn-icons .dropdown .dropdown-menu{
@@ -287,17 +266,6 @@ body{
     margin: 0.4375rem 0rem;
     padding: 0rem 0rem 0rem 0rem;
     border-radius: 0.25rem;
-}
-
-.list-dropdwn-icons .dropdown .dropdown-menu .dropdown-item{
-    display: block;
-    font-size: 0.875rem;
-    text-align: left;
-    line-height: 1.42857143;
-    color: black;
-    cursor: pointer;
-    text-decoration: none;
-
 }
 
 .caret{
@@ -323,11 +291,6 @@ body{
 
 .user-notification{
     font-size: 1.25rem;
-}
-
-.notifications .dropdown .dropdown-menu{
-  min-width: 8.125rem;
-  margin: 0.375rem 0rem;
 }
 
 @media screen and (max-width: 61.875em){

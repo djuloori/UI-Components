@@ -97,7 +97,7 @@ export default class Dropdown extends Component {
 					<span>{this.props.title}</span>
 					{icon}
 				</div>
-				<ul className='dropdown-menu'>
+				<ul className='dropdown-menu-multi'>
 					<ul className='first'>
 						{list2.map(this.renderDataDropDown)}
 					</ul>
