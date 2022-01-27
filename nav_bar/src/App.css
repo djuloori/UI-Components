@@ -1,14 +1,14 @@
 body{
     margin: 0px;
     padding: 0px;
-    font-family:"Segoe UI", "Noto Sans", "Ubuntu",  "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";   
+    font-family:"Segoe UI", "Noto Sans", "Ubuntu",  "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .navigation-container{
     display: flex;
     background-color:black;
     width: 100%;
-    position: fixed;
+    position: relative;
     max-height: 40px;
 }
 
@@ -17,9 +17,9 @@ body{
 }
 
 .app-image {
-    width: 200px;
-    margin-top: 6px;
-    border-right: 1px solid #a7b9bc;
+    width: 12.5rem;
+    margin-top: 0.375rem;
+    border-right: 0.0625rem solid #a7b9bc;
 }
 
 .navbar-subnav{
@@ -30,74 +30,242 @@ body{
 .nav-menu-items{
     display: flex;
     list-style-type: none;
-    padding-left: 2px;
-    margin-top: 8px;
-}
-
-.nav-menu-links{ 
-   text-decoration: none;
-   color: white;
-   margin: 4px 2px;
-   padding: 6px 8px;
-   font-size: 12px;
-   border-radius: 4px;
-   font-weight: 600;
+    padding-left: 0.125rem;
+    margin-top: 0.1875rem;
 }
 
 .nav-menu-links:hover{
-    background-color: #111; 
+    background-color: #111;
 }
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown.open > .dropdown-menu,.dropdown-menu-none {
+    display: block;
+}
+
+.dropdown-toggle {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    margin: 0.1875rem 0rem;
+    padding: 0.375rem 0.5rem;
+    font-size: 0.75rem;
+    border-radius: 0.25rem;
+    font-weight: 600;
+}
+
+.dropdown-menu {
+    left:0;
+    position: absolute;
+    top: 100%;
+    min-width: 8.125rem;
+    z-index: 1000;
+    display: none;
+    float: left;
+    padding: 0rem 0;
+    margin: 0.5625rem 0 0;
+    font-size: 0.8125rem;
+    text-align: left;
+    list-style: none;
+    background-color: white;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0.25rem;
+}
+
+.dropdown-menu-none {
+    left:0;
+    position: absolute;
+    top: 100;
+    min-width: 8.125rem;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    padding: 6.25rem 0,0,0.625rem;
+    margin: 0.5625rem 0 0;
+    font-size: 0.75rem;
+    font-style: italic;
+    text-align: left;
+    list-style: none;
+    background-color: white;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.375rem 0.75rem rgba(0, 0, 0, 0.175);
+}
+
+.dropdown-list {
+    cursor: pointer;
+}
+
+.dropdown-list :hover {
+    background:#dedede;
+}
+
+.dropdown-list > .dropdown-item {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    display: block;
+    padding: 0.3125rem 1.25rem 0.35rem 0.625rem;
+    clear: both;
+    font-weight: 350;
+    line-height: 1.42857143;
+    color: black;
+    white-space: nowrap;
+    text-decoration: none;
+
+}
+
+.dropdownMulti {
+    position: relative;
+ }
+
+
+.dropdown-toggle:hover{
+       background-color: #111;
+ }
+
+ .dropdownMulti.open > .dropdown-menu-multi {
+   display: block;
+ }
+
+ .dropdown-menu-multi {
+   left:0;
+   display: none;
+   position: absolute;
+   z-index: 1000;
+   padding: 0 0 0 0;
+   float: left;
+   margin: 0.5625rem 0 0;
+   font-size: 0.8125rem;
+   text-align: left;
+   list-style: none;
+   background-color: white;
+ }
+
+ .first,.second,.second-empty{
+     top: 100%;
+     position:absolute;
+     background-color:white;
+     width: 25rem;
+     background-clip: padding-box;
+     list-style-type:none;
+     margin:0;
+     padding:0 0 0 0.13rem;
+
+ }
+
+ .dropdown-item{
+     display:block;
+     padding:0 0 0 0.3125rem;
+     line-height:1.875rem;
+     color:black;
+     font-size:0.875rem;
+     font-weight: 350;
+ }
+
+ .dropdown-item:hover {
+     cursor: pointer;
+     background-color:#dedede;
+ }
+
+ .second,.second-empty{
+   left:9.375rem;
+   height:15.63rem;
+   border: 0.0625rem solid #ccc;
+   border-top-right-radius: 0.25rem;
+   border-bottom-right-radius: 0.25rem;
+   overflow-y: auto;
+
+ }
+
+.list-item{
+   font-style: italic;
+   padding:6.25rem 0 0 3.125rem;
+   font-weight: 300;
+ }
+
+ .first{
+   height:15.63rem;
+   border: 0.0625rem solid #ccc;
+   border-top-left-radius: 0.25rem;
+   border-bottom-left-radius: 0.25rem;
+ }
+
 
 .navigation-search-bar{
     order: 3;
     position: relative;
-    padding-right: 10px;
+    padding-right: 0.625rem;
 }
 
 .search-box{
-    height: 25px;
-    margin: 5px;
+    height: 1.563rem;
+    margin: 0.3125rem;
     border: none;
-    border-radius: 4px;
-    width: 100%; 
-    font-size: 15px;
+    border-radius: 0.25rem;
+    width: 100%;
+    font-size: 0.9375rem;
     font-family: inherit;
-    outline: 0;  
+    outline: 0;
 }
 
 .search-btn {
     position: absolute;
-    top: 0px;
-    right: 0px;
-    margin: 5px 2px;
+    top: 0rem;
+    right: 0rem;
+    margin: 0.3125rem 0.125rem;
     background-color: white;
     border: none;
-    height: 27px;
-    border-radius: 4px;
-    font-size: 15px;
+    height: 1.688rem;
+    border-radius: 0.25rem;
+    font-size: 0.9375rem;
     outline: 0;
 }
 
 .navigation-icons {
     order: 4;
-    padding-right: 5px;
-    padding-left: 4px;
+    padding: 0 0.3125rem 0 0.25rem;
 }
 
 .list-dropdwn-icons{
     display: flex;
     list-style-type: none;
-    margin: 0px 8px;
-    padding-left: 2px;    
+    margin: 0rem 0rem;
+    padding: 0 0 0 0.125rem;
 }
 
-.btn-icons{
-    background-color: black;
-    border: 0px;
+.list-dropdwn-icons .title{
+  font-family: inherit;
+  vertical-align: middle;
+  font-weight: 400;
+  font-size: 0.875rem;
+}
+
+.list-dropdwn-icons .dropdown.open > .dropdown-menu {
+  display: block;
+}
+
+.list-dropdwn-icons .dropdown .dropdown-menu{
+    left: auto;
+    right:0;
+    min-width: 9.375rem;
+    display: none;
+    font-size: 0.875rem;
+    text-align: left;
+    color: black;
     cursor: pointer;
-    outline: none;
-    font-family: inherit;
-    margin-top: 6px;
+    float: left;
+    text-decoration: none;
+    margin: 0.4375rem 0rem;
+    padding: 0rem 0rem 0rem 0rem;
+    border-radius: 0.25rem;
 }
 
 .caret{
@@ -105,42 +273,40 @@ body{
     width: 0;
     height: 0;
     vertical-align: middle;
-    margin-left: 3px;
-    border-top: 4px solid white;
-    border-right: 4px solid transparent;
-    border-left: 4px solid transparent;
-}
-
-.user-avatar{
-    color: white;
-    font-size: 14px;
-}
-
-.user-name {
-    vertical-align: middle;
+    margin-left: 0.1875rem;
+    border-top: 0.25rem solid white;
+    border-right: 0.25rem solid transparent;
+    border-left: 0.25rem solid transparent;
 }
 
 .badge{
-    width: 25px;
-    height: 25px;
+    width: 1.875rem;
+    height: 1.875rem;
     vertical-align: middle;
-    padding-right: 4px;
-    border-radius: 50%
+    margin: -0.3125rem 0.3125rem;
+    padding:0 0.125rem;
+    border-radius: 50%;
+    display: inline-block;
 }
 
 .user-notification{
-    font-size: 20px;
-    margin-left: 4px;
+    font-size: 1.25rem;
 }
 
-@media screen and (max-width: 990px){
+@media screen and (max-width: 61.875em){
     .navigation-search-bar{
      display: none;
     }
 }
 
-@media screen and (max-width: 750px){
+@media screen and (max-width: 46.875em){
     .navigation-icons{
+     display: none;
+    }
+}
+
+@media screen and (max-width: 34.375em){
+    .nav-menu-items{
      display: none;
     }
 }
