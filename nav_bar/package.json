@@ -8,7 +8,7 @@
     "@fortawesome/react-fontawesome": "^0.1.5",
     "react": "^16.10.0",
     "react-dom": "^16.10.0",
-    "react-scripts": "0.9.5",
+    "react-scripts": "5.0.1",
     "webpack": "^4.41.2"
   },
   "devDependencies": {
